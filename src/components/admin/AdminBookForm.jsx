@@ -15,6 +15,7 @@ function AdminBookForm({ book, onClose }) {
 
     useEffect(() => {
         if (book) {
+            book.stock = book.stock.toString();
             setFormData(book);
         }
     }, [book]);
@@ -130,7 +131,7 @@ function AdminBookForm({ book, onClose }) {
                         <div className="mb-3">
                             <label className="form-label">Stock</label>
                             <input
-                                type="number"
+                                type="string"
                                 name="stock"
                                 className="form-control"
                                 value={formData.stock}

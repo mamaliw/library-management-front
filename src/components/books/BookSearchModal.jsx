@@ -27,7 +27,6 @@ function BookSearchModal({ onClose }) {
     // Automatically re-run the search whenever title, author, or genre changes
     useEffect(() => {
         handleSearch();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [title, author, genre]);
 
     const handleBookClick = (bookId) => {
@@ -62,8 +61,9 @@ function BookSearchModal({ onClose }) {
 
                         {/* Genre */}
                         <div className="mb-3">
-                            <label className="form-label">Genre</label>
+                            <label htmlFor="search-genre" className="form-label">Genre</label>
                             <select
+                                id="search-genre"
                                 className="form-select"
                                 value={genre}
                                 onChange={(e) => setGenre(e.target.value)}
